@@ -1,0 +1,316 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light mode colors */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 217.2 91.2% 59.8%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Dark mode colors */
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Light mode overrides */
+  :root:not(.dark) {
+    --tw-bg-opacity: 1;
+  }
+
+  /* Background overrides */
+  :root:not(.dark) body,
+  :root:not(.dark) .min-h-screen {
+    background: linear-gradient(to bottom, #f8fafc, #e2e8f0) !important;
+    color: #0f172a !important;
+  }
+
+  :root:not(.dark) .bg-gradient-to-b {
+    background: linear-gradient(to bottom, #f8fafc, #e2e8f0) !important;
+  }
+
+  :root:not(.dark) .bg-gradient-to-r {
+    background: linear-gradient(to right, #3b82f6, #8b5cf6) !important;
+  }
+
+  :root:not(.dark) .bg-gradient-to-br {
+    background: linear-gradient(to bottom right, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1)) !important;
+  }
+
+  /* Text color overrides */
+  :root:not(.dark) .text-white {
+    color: #0f172a !important;
+  }
+
+  :root:not(.dark) .text-gray-400 {
+    color: #475569 !important;
+  }
+
+  :root:not(.dark) .text-gray-300 {
+    color: #334155 !important;
+  }
+
+  :root:not(.dark) .text-gray-200 {
+    color: #475569 !important;
+  }
+
+  :root:not(.dark) .text-gray-500 {
+    color: #64748b !important;
+  }
+
+  :root:not(.dark) .text-gray-600 {
+    color: #475569 !important;
+  }
+
+  /* Specific text elements */
+  :root:not(.dark) p {
+    color: #334155 !important;
+  }
+
+  :root:not(.dark) span:not(.bg-gradient-to-r):not(.bg-clip-text) {
+    color: inherit;
+  }
+
+  :root:not(.dark) .text-sm {
+    color: #475569 !important;
+  }
+
+  :root:not(.dark) .text-xl,
+  :root:not(.dark) .text-2xl {
+    color: #334155 !important;
+  }
+
+  /* Headings */
+  :root:not(.dark) h1,
+  :root:not(.dark) h2,
+  :root:not(.dark) h3,
+  :root:not(.dark) h4 {
+    color: #0f172a !important;
+  }
+
+  :root:not(.dark) h1 .text-white,
+  :root:not(.dark) h2 .text-white,
+  :root:not(.dark) h3 .text-white {
+    color: #0f172a !important;
+  }
+
+  :root:not(.dark) .text-blue-400,
+  :root:not(.dark) .text-blue-300 {
+    color: #2563eb !important;
+  }
+
+  :root:not(.dark) .text-purple-400,
+  :root:not(.dark) .text-purple-300 {
+    color: #7c3aed !important;
+  }
+
+  :root:not(.dark) .text-green-400 {
+    color: #16a34a !important;
+  }
+
+  :root:not(.dark) .text-red-400 {
+    color: #dc2626 !important;
+  }
+
+  :root:not(.dark) .text-yellow-400 {
+    color: #ca8a04 !important;
+  }
+
+  :root:not(.dark) .text-orange-400 {
+    color: #ea580c !important;
+  }
+
+  /* Background color overrides */
+  :root:not(.dark) .bg-white\/5,
+  :root:not(.dark) .bg-white\/10 {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  /* Card text inside white backgrounds */
+  :root:not(.dark) .bg-white\/5 h3,
+  :root:not(.dark) .bg-white\/10 h3 {
+    color: #0f172a !important;
+  }
+
+  :root:not(.dark) .bg-white\/5 p,
+  :root:not(.dark) .bg-white\/10 p {
+    color: #475569 !important;
+  }
+
+  :root:not(.dark) .bg-white\/5 span,
+  :root:not(.dark) .bg-white\/10 span {
+    color: #64748b !important;
+  }
+
+  :root:not(.dark) .bg-blue-500\/20,
+  :root:not(.dark) .bg-blue-500\/10 {
+    background-color: rgba(59, 130, 246, 0.1) !important;
+  }
+
+  :root:not(.dark) .bg-purple-500\/20,
+  :root:not(.dark) .bg-purple-500\/10 {
+    background-color: rgba(139, 92, 246, 0.1) !important;
+  }
+
+  :root:not(.dark) .bg-green-500\/20,
+  :root:not(.dark) .bg-green-500\/10 {
+    background-color: rgba(34, 197, 94, 0.1) !important;
+  }
+
+  :root:not(.dark) .bg-red-500\/20,
+  :root:not(.dark) .bg-red-500\/10 {
+    background-color: rgba(239, 68, 68, 0.1) !important;
+  }
+
+  :root:not(.dark) .bg-yellow-500\/20,
+  :root:not(.dark) .bg-yellow-500\/10 {
+    background-color: rgba(234, 179, 8, 0.1) !important;
+  }
+
+  /* Border color overrides */
+  :root:not(.dark) .border-white\/10,
+  :root:not(.dark) .border-white\/20 {
+    border-color: rgba(0, 0, 0, 0.1) !important;
+  }
+
+  :root:not(.dark) .border-blue-500\/30 {
+    border-color: rgba(59, 130, 246, 0.3) !important;
+  }
+
+  :root:not(.dark) .border-purple-500\/30 {
+    border-color: rgba(139, 92, 246, 0.3) !important;
+  }
+
+  :root:not(.dark) .border-green-500\/30 {
+    border-color: rgba(34, 197, 94, 0.3) !important;
+  }
+
+  :root:not(.dark) .border-red-500\/30 {
+    border-color: rgba(239, 68, 68, 0.3) !important;
+  }
+
+  /* Header/backdrop overrides */
+  :root:not(.dark) header {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    border-color: rgba(0, 0, 0, 0.1) !important;
+  }
+
+  /* Card overrides */
+  :root:not(.dark) .bg-\[\#0F172A\]\/80,
+  :root:not(.dark) .bg-\[\#1E293B\] {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+  }
+
+  /* Input overrides */
+  :root:not(.dark) input,
+  :root:not(.dark) select,
+  :root:not(.dark) textarea {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    color: #0f172a !important;
+    border-color: rgba(0, 0, 0, 0.2) !important;
+  }
+
+  :root:not(.dark) input::placeholder,
+  :root:not(.dark) textarea::placeholder {
+    color: #94a3b8 !important;
+  }
+
+  /* Button and link text overrides */
+  :root:not(.dark) button:not(.bg-blue-600):not(.bg-gradient-to-r),
+  :root:not(.dark) a:not(.bg-blue-600):not(.bg-gradient-to-r) {
+    color: #0f172a;
+  }
+
+  /* Gradient buttons should keep white text */
+  :root:not(.dark) .bg-gradient-to-r {
+    color: white !important;
+  }
+
+  :root:not(.dark) .bg-gradient-to-r * {
+    color: white !important;
+  }
+
+  /* Secondary buttons */
+  :root:not(.dark) .bg-white\/5,
+  :root:not(.dark) .bg-white\/10 {
+    color: #0f172a !important;
+  }
+
+  :root:not(.dark) .bg-white\/5 *,
+  :root:not(.dark) .bg-white\/10 * {
+    color: #0f172a !important;
+  }
+
+  /* Shadow overrides */
+  :root:not(.dark) .shadow-blue-500\/50,
+  :root:not(.dark) .shadow-blue-500\/30 {
+    --tw-shadow-color: rgba(59, 130, 246, 0.2);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Maintenance Page Gradient Animation */
+@keyframes gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Login Page Styles */
+@import url('./login/login.css');

@@ -1,0 +1,38 @@
+{
+  "name": "xsonic",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "npm@10.2.4",
+  "description": "X-Sonic - AI Audio/Video Studio SaaS Platform",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev --filter=@xsonic/web",
+    "dev:all": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "format": "prettier --write \"**/*.{ts,tsx,md,json}\"",
+    "db:migrate": "cd apps/web && npm run db:migrate",
+    "db:seed": "cd apps/web && npm run db:seed"
+  },
+  "devDependencies": {
+    "prettier": "^3.2.5",
+    "turbo": "^2.0.0",
+    "typescript": "^5.4.5"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "dependencies": {
+    "@google-cloud/storage": "^7.17.2",
+    "@google/generative-ai": "^0.24.1",
+    "dotenv": "^17.2.3",
+    "googleapis": "^164.1.0",
+    "open": "^10.2.0"
+  }
+}
