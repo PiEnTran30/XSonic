@@ -387,3 +387,5 @@ For issues or questions:
 
 **Built with ❤️ for professional audio/video creators**
 
+#   X S o n i c  
+ 
